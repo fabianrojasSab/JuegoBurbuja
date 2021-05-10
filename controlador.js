@@ -18,7 +18,7 @@ var velocidadCuadrado = 90;
 var velocidadBurbuja = 2
 var radioBurbuja = 30;
 var radioCuadrado = 10;
-var cantidadCuadrados = 15;
+var cantidadCuadrados = 3;
 var posBurbuja = {x:400, y:200};
 var numAleatorio
 var xdirBurbuja = 0;
@@ -76,11 +76,13 @@ function main(){
 		}
 	}
 	
-	//detiene la burbuja si se toca con uno de los cuadrados
+	//se desaparecen los cuadrados cuando se chocan con la burbuja
 	for(let i = 0; i < cantidadCuadrados ; i ++){
 		let x = colicion(burbuja,cuadrados[i])
 		if (x) {
-			control(KeyboardEvent);
+			var indice = i ; // obtenemos el indice
+			cuadrados.splice(indice, 1); // 1 es la cantidad de elemento a eliminar
+			cantidadCuadrados = cuadrados.length // se asigna la nueva cantidad de cuadrados
 		}
 	}
 }
