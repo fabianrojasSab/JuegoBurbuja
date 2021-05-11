@@ -4,6 +4,16 @@ class Vista {
 
     }
 
+    cargarPlantilla(plantilla){
+		let template = document.getElementById(plantilla);
+
+		if (template){
+			var clon = template.content.cloneNode(true);
+			document.getElementById("cuerpo").innerHTML ="";
+			document.getElementById("cuerpo").appendChild(clon);
+		}
+	}
+
     //carga los elementos en la pantalla
     CargarElementos(){
         canvas = document.getElementById("canvas");

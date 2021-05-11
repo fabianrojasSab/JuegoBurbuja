@@ -26,11 +26,19 @@ var ydirBurbuja = 0;
 var vista = new Vista();
 
 /*al cargar la pagina lanza el metodo iniciar asociado al evento LOAD*/
-window.addEventListener("load", iniciar, false);
+//window.addEventListener("load", iniciar, false);
 
 /*************************se ejecuta al cargar. crea los objetos ***********************************/
 
-function iniciar (){
+//function iniciar (){
+	//vista.CargarElementos();
+	window.onload = function() {
+		vista.cargarPlantilla("inicio");
+	};
+//}
+
+function iniciarJuego(juego){
+	vista.cargarPlantilla(juego);
 	vista.CargarElementos();
 	main();
 }
