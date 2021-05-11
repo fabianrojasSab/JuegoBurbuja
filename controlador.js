@@ -3,11 +3,10 @@ Michael Fabian Rojas Sabogal
 
 Laura Viviana Gomez Urueña
 
-version :1.0.2 
-Octubre / 2018
+version :1.0.3 
+Mayo / 2021
 
-nota: arreglar de que los cuadrados desaparezcan cuando el curculos los toque
-averiguar el por que de los dos numero de la linea 70
+nota: agregar los contadores de puntos 
 ****************************************************/
 let colores = ["green","red", "black","blue","orange","gold","lightcoral"];
 var cuadrados = [];
@@ -18,13 +17,13 @@ var velocidadCuadrado = 90;
 var velocidadBurbuja = 2
 var radioBurbuja = 30;
 var radioCuadrado = 10;
-var cantidadCuadrados = 3;
+var cantidadCuadrados = 15;
 var posBurbuja = {x:400, y:200};
 var numAleatorio
 var xdirBurbuja = 0;
 var ydirBurbuja = 0;
 
-
+var vista = new Vista();
 
 /*al cargar la pagina lanza el metodo iniciar asociado al evento LOAD*/
 window.addEventListener("load", iniciar, false);
@@ -32,17 +31,7 @@ window.addEventListener("load", iniciar, false);
 /*************************se ejecuta al cargar. crea los objetos ***********************************/
 
 function iniciar (){
-	canvas = document.getElementById("canvas");
-	ctx  = canvas.getContext("2d");
-
-	// crea el objeto de la clase burbuja
-	burbuja = new Burbujas();
-
-	// crea los objetos de la clase cuadrado
-	for(let i = 0 ; i < cantidadCuadrados; i++){
-		//lo agrega al array
-		cuadrados.push( new Cuadrado() );	
-	}
+	vista.CargarElementos();
 	main();
 }
 
@@ -54,12 +43,10 @@ function main(){
 	ctx.clearRect(0,0,  canvas.width, canvas.height);
 
 	//muestra la burbuja
-	burbuja.mostrar(ctx);
+	vista.MostrarBurbuja();
 
 	//muestra los cuadrados
-	for (let i = 0 ; i < cantidadCuadrados ; i++){
-		cuadrados[i].mostrar(ctx);
-	}
+	vista.MostrarCuadrados();
 
 	//mueve los objetos
 	burbuja.mover();
@@ -69,22 +56,11 @@ function main(){
 		cuadrados[i].mover();
 	}
 	
-	for(let i = 0; i < cantidadCuadrados ; i ++){
-		let x = colicion(burbuja,cuadrados[i])
-		if (x) {
-			console.log("perdiste");
-		}
-	}
+	//aumenta el tamaño de la burbuja
+	vista.AumentarTamaño();
 	
-	//se desaparecen los cuadrados cuando se chocan con la burbuja
-	for(let i = 0; i < cantidadCuadrados ; i ++){
-		let x = colicion(burbuja,cuadrados[i])
-		if (x) {
-			var indice = i ; // obtenemos el indice
-			cuadrados.splice(indice, 1); // 1 es la cantidad de elemento a eliminar
-			cantidadCuadrados = cuadrados.length // se asigna la nueva cantidad de cuadrados
-		}
-	}
+	//elimina el cuadrado cuando choca con la burbuja
+	vista.DeleteCuadrados();
 }
 
 

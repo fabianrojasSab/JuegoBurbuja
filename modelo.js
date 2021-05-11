@@ -1,5 +1,5 @@
 /****** definicion de la clase  Burbujas *********************************************/
-class Burbujas{
+class Burbuja{
     constructor(){
     	this.x = posBurbuja['x'];
     	this.y = posBurbuja['y'];
@@ -13,7 +13,7 @@ class Burbujas{
 	}
 
  // dibuja el objeto en el canvas
- 	mostrar(ctx){
+ 	dibujar(ctx){
  		ctx.beginPath();
  		ctx.strokeStyle = this.color;
  		ctx.arc(this.x, this.y, this.r, 0 , 2*Math.PI);
@@ -76,7 +76,7 @@ class Cuadrado{
         this.r = radioCuadrado;	
 	}
 	// dibuja el objeto en el canvas
- 	mostrar(ctx){
+ 	dibujar(ctx){
  		ctx.strokeStyle = this.color;
  		ctx.fillRect(this.x, this.y, radioCuadrado, radioCuadrado);
  	}
