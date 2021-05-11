@@ -51,6 +51,7 @@ class Vista {
                 var indice = i ; // obtenemos el indice
                 cuadrados.splice(indice, 1); // 1 es la cantidad de elemento a eliminar
                 cantidadCuadrados = cuadrados.length // se asigna la nueva cantidad de cuadrados
+                document.getElementById("puntaje").innerHTML = puntaje ++;
             }
         }
     }

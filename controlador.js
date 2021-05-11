@@ -22,6 +22,7 @@ var posBurbuja = {x:400, y:200};
 var numAleatorio
 var xdirBurbuja = 0;
 var ydirBurbuja = 0;
+var puntaje = 0;
 
 var vista = new Vista();
 

@@ -5,9 +5,28 @@
     width: 100%;
 }
 
+#datos {
+    background-color:rgb(255, 238, 0);
+    margin: auto;
+    position: relative;
+    height: 500px;
+    width: 900px;
+    display: block;
+    text-align: center;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.form-group{
+    padding: 50px;
+    font-size: 25px;
+    margin: 10px;
+}
+
 #canvas{
     background-color: chartreuse;
-
     margin: auto;
     display: block;
     width: 900px;
@@ -17,4 +36,14 @@
     bottom: 0;
     left: 0;
     right: 0;
+}
+
+#puntaje {
+    background-color: rgb(255, 0, 234);
+    height: 100px;
+    width: 100px;
+    float: right;
+    margin: 20px;
+    font-size: 80px;
+    text-align: center;
 }
