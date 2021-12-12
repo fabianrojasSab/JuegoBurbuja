@@ -18,6 +18,8 @@ class Vista {
     CargarElementos(){
         canvas = document.getElementById("canvas");
         ctx  = canvas.getContext("2d");
+        document.getElementById("puntaje").innerHTML = puntaje;
+        
     
         // crea el objeto de la clase burbuja
         burbuja = new Burbuja();
@@ -26,6 +28,12 @@ class Vista {
         for(let i = 0 ; i < cantidadCuadrados; i++){
             //lo agrega al array
             cuadrados.push( new Cuadrado() );	
+        }
+
+        // crea los objetos de la clase cuadradoMalo
+        for(let i = 0 ; i < cantidadCuadradosMalos; i++){
+            //lo agrega al array
+            cuadradosMalos.push( new CuadradoMalo() );	
         }
     
     }
@@ -37,6 +45,14 @@ class Vista {
         }
     
     }
+
+    //muestra los cuadrados malos trayendo la informacion desde el modelo
+    MostrarCuadradosMalos(){
+        for (let i = 0 ; i < cantidadCuadradosMalos ; i++){
+            cuadradosMalos[i].dibujar(ctx);
+        }
+    
+    }   
 
     //muestra los cuadrados trayendo la informacion desde el modelo
     MostrarBurbuja(){
@@ -51,7 +67,8 @@ class Vista {
                 var indice = i ; // obtenemos el indice
                 cuadrados.splice(indice, 1); // 1 es la cantidad de elemento a eliminar
                 cantidadCuadrados = cuadrados.length // se asigna la nueva cantidad de cuadrados
-                document.getElementById("puntaje").innerHTML = puntaje ++;
+                puntaje = puntaje + 1;
+                document.getElementById("puntaje").innerHTML = puntaje;
             }
         }
     }

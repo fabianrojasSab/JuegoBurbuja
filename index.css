@@ -1,22 +1,12 @@
 #contenedor {
     background-color:blue;
-    margin: auto;
-    height: 640px;
-    width: 100%;
+    padding: 20px;
 }
 
 #datos {
     background-color:rgb(255, 238, 0);
-    margin: auto;
-    position: relative;
-    height: 500px;
-    width: 900px;
-    display: block;
     text-align: center;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    padding: 10px;
 }
 
 .form-group{
@@ -27,23 +17,11 @@
 
 #canvas{
     background-color: chartreuse;
-    margin: auto;
-    display: block;
-    width: 900px;
-    height: 600px;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
 }
 
 #puntaje {
     background-color: rgb(255, 0, 234);
     height: 100px;
-    width: 100px;
-    float: right;
-    margin: 20px;
     font-size: 80px;
     text-align: center;
 }

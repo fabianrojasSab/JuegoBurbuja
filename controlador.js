@@ -8,22 +8,30 @@ Mayo / 2021
 
 nota: agregar los contadores de puntos 
 ****************************************************/
-let colores = ["green","red", "black","blue","orange","gold","lightcoral"];
+
 var cuadrados = [];
+var radioCuadrado = 10;
+var velocidadCuadrado = 90;
+var cantidadCuadrados = 5;
+
+var cuadradosMalos = [];
+var radioCuadradoMalo = 20;
+var velocidadCuadradoMalo = 100;
+var cantidadCuadradosMalos = 2;
+
 var burbuja
 var canvas;
 var ctx;
-var velocidadCuadrado = 90;
+
 var velocidadBurbuja = 2
 var radioBurbuja = 30;
-var radioCuadrado = 10;
-var cantidadCuadrados = 15;
 var posBurbuja = {x:400, y:200};
-var numAleatorio
 var xdirBurbuja = 0;
 var ydirBurbuja = 0;
-var puntaje = 0;
 
+let colores = ["green","red", "black","blue","orange","gold","lightcoral"];
+var numAleatorio
+var puntaje = 0;
 var vista = new Vista();
 
 /*al cargar la pagina lanza el metodo iniciar asociado al evento LOAD*/
@@ -57,12 +65,20 @@ function main(){
 	//muestra los cuadrados
 	vista.MostrarCuadrados();
 
+	//muestra los cuadrados malos
+	vista.MostrarCuadradosMalos();
+
 	//mueve los objetos
 	burbuja.mover();
 
 	//mueve los cuadrados
 	for(let i = 0; i < cantidadCuadrados ; i ++){
 		cuadrados[i].mover();
+	}
+
+	//mueve los cuadrados Malos
+	for(let i = 0; i < cantidadCuadradosMalos ; i ++){
+		cuadradosMalos[i].mover();
 	}
 	
 	//aumenta el tamaño de la burbuja
