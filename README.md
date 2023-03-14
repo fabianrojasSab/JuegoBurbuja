@@ -1,6 +1,8 @@
 # Juego de la Burbuja
 Este es un proyecto creado con conomiento empirico, utilizando HTML, JS  y CCS puro sin ningun tipo de libreria, que aun se encuentra en desarrollo. 
 
+INGRESA A JUGAR AQUI --> https://fabianrojassab.github.io/JuegoBurbuja/
+
 Eres una burbuja, la cual el objetivo es tocar con la burbuja los cuadrados negros que se encuentran rondando el area.
 
 Inicialmente, te va solicitar tu nombre de usuario
